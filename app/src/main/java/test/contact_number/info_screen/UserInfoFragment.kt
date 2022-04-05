@@ -83,6 +83,7 @@ class UserInfoFragment : MvpAppCompatFragment(), UserInfoView {
             Toast.makeText(context, "Can't call on these number", Toast.LENGTH_SHORT).show()
         }
     }
+
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<String?>,

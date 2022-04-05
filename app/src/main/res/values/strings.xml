@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">contact_number</string>
-    <string name="call">CALL</string>
+    <string name="app_name">Phone Book</string>
+    <string name="phone_book_is_empty">Phone book is empty, check your network</string>
 </resources>

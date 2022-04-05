@@ -8,8 +8,9 @@ import test.contact_number.model.Users
 
 @StateStrategyType(AddToEndSingleStrategy::class)
 interface UserListView : MvpView {
+
     @SingleState
     fun init(users: List<Users>)
-    fun updateUsers()
+    fun updateUsers(users: List<Users>)
     fun showError(error: Throwable)
 }

@@ -1,8 +1,19 @@
 package test.contact_number.main_screen
 
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
+import android.os.Bundle
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.plusAssign
 import moxy.MvpPresenter
+import test.contact_number.R
+import test.contact_number.info_screen.UserInfoFragment
+import test.contact_number.main_screen.adapter.OnItemClickListener
+import test.contact_number.main_screen.adapter.UserListAdapter
 import test.contact_number.model.Users
 import test.contact_number.repository.UsersRepository
 import test.contact_number.schedulers.Schedulers
@@ -16,8 +27,7 @@ class UserListPresenter(
 
     override fun onFirstViewAttach() {
         super.onFirstViewAttach()
-        loadData()
-
+            loadData()
     }
 
     private fun loadData(){
@@ -35,6 +45,7 @@ class UserListPresenter(
 
     private fun fetchDataSuccess(users: List<Users>) {
         viewState.init(users)
+        viewState.updateUsers(users)
     }
 
     private fun fetchDataOnError(error: Throwable){

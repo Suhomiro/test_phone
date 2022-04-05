@@ -6,6 +6,7 @@ import retrofit2.http.Query
 import test.contact_number.model.Users
 
 interface API {
+
     @GET("/users")
     fun getUsers(@Query("id") id: Int? = null): Single<List<Users>>
 }

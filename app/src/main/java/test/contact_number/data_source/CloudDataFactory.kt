@@ -4,5 +4,11 @@ import test.contact_number.network.APIFactory
 
 object CloudDataFactory{
 
-    fun create(): CloudDataUsers = CloudDataUsersImpl(APIFactory.create())
+    private val cloudDataUsers: CloudDataUsers by lazy {
+        CloudDataUsersImpl(
+            APIFactory.create()
+        )
+    }
+
+    fun create(): CloudDataUsers = cloudDataUsers
 }

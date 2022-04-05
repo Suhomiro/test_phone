@@ -12,10 +12,11 @@ object UsersStorageFactory {
     }
 
     private val dataBaseUserStorage: UsersStorage by lazy {
-        Room.databaseBuilder(context, UsersStorage::class.java, "user.db")
+        Room.databaseBuilder(context, UsersStorage::class.java, "users.db")
             .fallbackToDestructiveMigration()
             .build()
     }
 
-    fun create(): UsersStorage = dataBaseUserStorage
+    fun createDB(): UsersStorage = dataBaseUserStorage
+    fun createCache(): UsersStorage = inMemoryUsersStorage
 }
